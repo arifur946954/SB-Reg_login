@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/employee/saveEmployeeForm}" th:object="${employees}" method="POST">
+    <div  class="px-2">
+        <div class="mb-3">
+            <label class="form-label">First Name</label>
+            <input th:field="*{firstName}" type="text" class="form-control">
+
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Last Name</label>
+            <input th:field="*{lastName}" type="text" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input th:field="*{email}" type="email" class="form-control">
+        </div>
+
+
+        <div class="mb-3">
+            <label  class="form-label">Password</label>
+            <input th:field="*{password}" type="password" class="form-control">
+        </div>
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" value="submit" class="btn btn-success">Submit</button>
+
+    </div>
+
+    <div class="mt-3">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" th:href="@{/employee/home}">Back To Home</a>
+        </li>
+    </div>
+
+</form>
+
+</body>
+</html>
