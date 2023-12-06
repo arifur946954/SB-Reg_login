@@ -2,6 +2,8 @@ package com.CRUD.LogReg.service;
 
 import com.CRUD.LogReg.dao.EmployeeRepository;
 import com.CRUD.LogReg.entity.Employee;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,11 +12,15 @@ import java.util.Optional;
 @Service
 
 public class EmployeeServiceImp implements EmployeeService{
+
     private EmployeeRepository employeeRepository;
 
     public EmployeeServiceImp(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
+
     }
+
+
 
     @Override
     public List<Employee> findAll() {
